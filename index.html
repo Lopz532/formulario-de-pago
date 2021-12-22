@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Formulario de pagos</title>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <img src="./images/logo.png" alt="logo" class="logo">
+      <h1>Información de pago</h1>
+    </header>
+    <form>
+      <div>
+        <label for="name">Nombre completo</label>
+        <input type="text" name="name" id="name" placeholder="Juan Perez">
+      </div>
+      <div class="icon">
+        <label id="creditCardTitle" for="creditCard">Número de Tarjeta de Crédito</label>
+        <input type="number" name="creditCard" id="creditCard" placeholder="1234 1234 1234 1234" disabled>
+        <i id="creditCardIcon" class="far fa-credit-card"></i>
+      </div>
+      <div>
+        <label for="expiry">Fecha vencimiento</label>
+        <input type="text" name="expir" id="expir" placeholder="MM/YY" disabled>
+      </div>
+      <div class="icon">
+        <label for="cvv">CVV</label>
+        <input type="number" name="cvv" id="cvv" max="3" placeholder="***" disabled>
+        <i id="idIcon" class="fas fa-info-circle"></i>
+      </div>
+      <div>
+        <label for="address">Dirección</label>
+        <input type="text" name="address" id="address" placeholder="Av. Morelos #123" disabled>
+      </div>
+      <div>
+        <button id="button" disabled>Confirmar pago</button>
+        <p>Verificas que esta Información es correcta</p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const creditCardTitle = document.querySelector("#creditCardTitle");
+    creditCardTitle.addEventListener('click', ()=>{
+      document.querySelector("#creditCard").removeAttribute('disabled');
+      document.querySelector("#expir").removeAttribute('disabled');
+      document.querySelector("#cvv").removeAttribute('disabled');
+      document.querySelector("#address").removeAttribute('disabled');
+      document.querySelector("#button").removeAttribute('disabled');
+    });
+  </script>
+</body>
+</html>
+
+
+
